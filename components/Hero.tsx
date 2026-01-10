@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
     <div className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-blue-900">
       {/* Background Image Overlay */}
       <div className="absolute inset-0 z-0">
-        <img src={HeroBg} alt="Background" className="w-full h-full object-cover opacity-50 mix-blend-overlay" />
+        <img src={HeroBg} alt="Background" className="w-full h-full object-cover opacity-75 mix-blend-overlay" />
         <div className="absolute inset-0 bg-blue-900/80 mix-blend-multiply"></div>
       </div>
 

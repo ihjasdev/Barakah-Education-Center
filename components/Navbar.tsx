@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
           <div className="flex flex-col h-full">
             <div className="flex justify-between items-center p-6 border-b border-slate-100">
               <div className="flex items-center gap-2">
-                <img src={Logo} alt="Barakah Charity Logo" className="h-10 w-auto" />
+                <img src={Logo} alt="Barakah Charity Logo" className="h-24 w-auto" />
                 {/* <span className="text-xl font-black text-blue-900">BARAKAH</span> */}
               </div>
               <button onClick={() => setIsOpen(false)} className="text-blue-900">

@@ -3,6 +3,9 @@ import React from 'react';
 import { BrainCircuit, Languages, Building2, Star, ShieldCheck, HeartPulse } from 'lucide-react';
 import { Course } from './types';
 import Instructor1 from './assets/profile.png';
+import Sabras from './assets/sabras.jpeg';
+import Sabran from './assets/sabran.jpeg';
+import Girl from './assets/girl.jpg';
 
 export const COURSES: Course[] = [
   {
@@ -83,25 +86,25 @@ export const TESTIMONIALS = [
     name: "Mohamed Sabran",
     role: "Web developer",
     content: "The AI Development course changed how I code. I went from struggling with syntax to building full production ready websites in weeks using AI agents.",
-    avatar: "https://i.pravatar.cc/150?u=irfan"
+    avatar:Sabras
   },
   {
     name: "Sarah Fathima",
     role: "Project Coordinator",
     content: "The English for Professionals course gave me the confidence to lead international meetings. Highly recommended for corporate staff.",
-    avatar: "https://i.pravatar.cc/150?u=sarah"
+    avatar: Girl
   },
   {
-    name: "Mohamed Zaid",
+    name: "Mohamed Sabras",
     role: "MEP Engineer",
     content: "Detailed and practical CAD training. The Building Services modules were exactly what I needed for my current role in Dubai.",
-    avatar: "https://i.pravatar.cc/150?u=zaid"
+    avatar: Sabran
   }
 ];
 
 export const PARTNERS = [
-  "Microsoft", "AutoDesk", "British Council", "Cursor AI", "Windsurf"
+  "barakah Charity", "British Council", "TVEC"
 ];
 
 export const WHATSAPP_NUMBER = "+94766313173";
-export const LOCATION = "Colombo, Sri Lanka";
+export const LOCATION = "Kinniya, Sri Lanka";
