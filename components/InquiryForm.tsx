@@ -27,7 +27,7 @@ const InquiryForm: React.FC<InquiryFormProps> = ({ onEnrollClick }) => {
               {[
                 { label: 'Campus', value: 'Kinniya,Trincomalee', icon: '📍' },
                 { label: 'Support', value: 'Sat,Sunday Advisory', icon: '💎' },
-                { label: 'Call', value: '+94 71380123', icon: '📞' },
+                { label: 'Call', value: '+94 771380123', icon: '📞' },
                 { label: 'Email', value: 'info.barakaitcenter@gmail.com', icon: '✉️' },
               ].map((item, i) => (
                 <div key={i} className="flex flex-col p-6 bg-white rounded-3xl border border-slate-100 shadow-sm">

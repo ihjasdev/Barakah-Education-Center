@@ -6,6 +6,7 @@ import Instructor1 from './assets/profile.png';
 import Sabras from './assets/sabras.jpeg';
 import Sabran from './assets/sabran.jpeg';
 import Girl from './assets/girl.jpg';
+import CAD from './assets/Autocad.jpg';
 
 export const COURSES: Course[] = [
   {
@@ -103,7 +104,7 @@ export const TESTIMONIALS = [
     name: "Mohamed Sabran",
     role: "Web developer",
     content: "The AI Development course changed how I code. I went from struggling with syntax to building full production ready websites in weeks using AI agents.",
-    avatar:Sabras
+    avatar: Sabras
   },
   {
     name: "Sarah Fathima",
@@ -123,5 +124,35 @@ export const PARTNERS = [
   "barakah Charity", "British Council", "TVEC"
 ];
 
-export const WHATSAPP_NUMBER = "+94766313173";
+export const WHATSAPP_NUMBER = "+94771380123";
 export const LOCATION = "Kinniya, Sri Lanka";
+
+export const NEWS_FEED = [
+  {
+    id: 1,
+    author: "Barakah Education Center",
+    date: "2 hours ago",
+    content: "Exciting news! Our AI-Powered Web Development course (Batch 2) is now open for enrollment. Learn to build production-ready sites with AI agents. 🚀 #AI #WebDev #FutureSkills",
+    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800",
+    likes: 24,
+    comments: 5
+  },
+  {
+    id: 2,
+    author: "Barakah Education Center",
+    date: "1 month ago",
+    content: "Highlights from our recent English for Professionals workshop! Our students are mastering corporate communication with confidence. 🤝 #ProfessionalEnglish #CareerGrowth",
+    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800",
+    likes: 42,
+    comments: 12
+  },
+  {
+    id: 3,
+    author: "Barakah Education Center",
+    date: "3 days ago",
+    content: "Deep dive into AutoCAD & MEP Engineering. Practical sessions are where the real learning happens!  #Engineering #CAD #SkillBuilding",
+    image:CAD,
+    likes: 18,
+    comments: 3
+  }
+];

@@ -10,6 +10,7 @@ import WhatsAppButton from './components/WhatsAppButton';
 import DonatePage from './components/DonatePage';
 import Gallery from './components/Gallery';
 import ApplicationModal from './components/ApplicationModal';
+import NewsFeed from './components/NewsFeed';
 import { COURSES, TESTIMONIALS, PARTNERS } from './constants';
 import { Course } from './types';
 import { GraduationCap, Award, Users, TrendingUp, Trees, Heart, Star, Sparkles, Send } from 'lucide-react';
@@ -158,23 +159,8 @@ const App: React.FC = () => {
               </div>
             </section>
 
-            {/* Newsletter Section */}
-            <section className="py-24 bg-amber-500">
-              <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 className="text-4xl font-black text-blue-950 mb-6 tracking-tighter italic">Join Our Monthly Insights</h2>
-                <p className="text-blue-900 font-bold mb-10 max-w-xl mx-auto">Get the latest on AI trends, corporate English tips, and center updates directly in your inbox.</p>
-                <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto" onSubmit={e => e.preventDefault()}>
-                  <input
-                    type="email"
-                    placeholder="your.email@example.com"
-                    className="flex-1 px-6 py-4 rounded-2xl border-none focus:ring-2 focus:ring-blue-900 outline-none font-bold shadow-lg"
-                  />
-                  <button className="bg-blue-950 text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-blue-900 transition-colors flex items-center justify-center gap-2 shadow-lg">
-                    Subscribe <Send className="w-4 h-4" />
-                  </button>
-                </form>
-              </div>
-            </section>
+            {/* News Feed Section */}
+            <NewsFeed />
 
             {/* Inquiry Form */}
             <InquiryForm onEnrollClick={() => setIsApplicationModalOpen(true)} />
