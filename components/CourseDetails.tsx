@@ -6,9 +6,10 @@ import { Course } from '../types';
 interface CourseDetailsProps {
   course: Course | null;
   onClose: () => void;
+  onEnroll: () => void;
 }
 
-const CourseDetails: React.FC<CourseDetailsProps> = ({ course, onClose }) => {
+const CourseDetails: React.FC<CourseDetailsProps> = ({ course, onClose, onEnroll }) => {
   if (!course) return null;
 
   return (
@@ -44,13 +45,12 @@ const CourseDetails: React.FC<CourseDetailsProps> = ({ course, onClose }) => {
               <h2 className="text-4xl sm:text-6xl font-black text-blue-950 tracking-tighter leading-none mb-4">{course.title}</h2>
               <p className="text-xl text-slate-500 font-medium max-w-2xl">{course.description}</p>
             </div>
-            <a
-              href="#contact"
-              onClick={onClose}
+            <button
+              onClick={onEnroll}
               className={`px-10 py-5 rounded-2xl bg-blue-950 text-white font-black uppercase tracking-widest text-sm shadow-2xl text-center hover:bg-amber-600 hover:text-blue-950 transition-all`}
             >
               Enroll in Program
-            </a>
+            </button>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
@@ -117,6 +117,7 @@ const CourseDetails: React.FC<CourseDetailsProps> = ({ course, onClose }) => {
                     <div>
                       <h5 className="font-black text-blue-950 text-lg icon-tight">{course.instructor.name}</h5>
                       <p className="text-amber-600 font-bold text-xs uppercase tracking-wider">{course.instructor.role}</p>
+                      <p className="text-amber-600 font-bold text-xs uppercase tracking-wider">{course.instructor.education}</p>
                     </div>
                   </div>
                   <p className="text-slate-500 text-sm font-medium leading-relaxed mb-4">

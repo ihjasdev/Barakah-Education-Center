@@ -1,9 +1,15 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Heart } from 'lucide-react';
 import Logo from '../assets/Barakah-education-center.png';
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  onNavigate?: (page: 'home' | 'donate') => void;
+  onEnrollClick?: () => void;
+  currentPage?: 'home' | 'donate';
+}
+
+const Navbar: React.FC<NavbarProps> = ({ onNavigate, onEnrollClick, currentPage = 'home' }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -13,10 +19,28 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    if (onNavigate) {
+      onNavigate('home');
+      // Allow time for home page to render before scrolling
+      setTimeout(() => {
+        if (href === '#') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          const element = document.querySelector(href);
+          element?.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+    setIsOpen(false);
+  };
+
   const navLinks = [
     { name: 'Home', href: '#' },
     { name: 'Courses', href: '#courses' },
     { name: 'Our Impact', href: '#impact' },
+    { name: 'Gallery', href: '#gallery' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -38,22 +62,32 @@ const Navbar: React.FC = () => {
             </div> */}
           </div>
 
-          <div className="hidden md:flex items-center space-x-10">
+          <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
+                onClick={(e) => handleLinkClick(e, link.href)}
                 className={`text-sm font-bold uppercase tracking-wider transition-all hover:translate-y-[-1px] text-slate-600 hover:text-blue-900`}
               >
                 {link.name}
               </a>
             ))}
-            <a
-              href="#contact"
+
+            <button
+              onClick={() => onNavigate?.('donate')}
+              className="group flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-black transition-all transform hover:scale-105 border-2 border-amber-500 text-amber-600 hover:bg-amber-50"
+            >
+              <Heart className={`w-4 h-4 transition-transform group-hover:scale-110 ${currentPage === 'donate' ? 'fill-amber-600' : ''}`} />
+              DONATE
+            </button>
+
+            <button
+              onClick={() => onEnrollClick?.()}
               className="bg-amber-500 hover:bg-amber-600 text-blue-900 px-7 py-3 rounded-xl text-sm font-black transition-all transform hover:scale-105 shadow-lg shadow-amber-500/20"
             >
               ENROLL NOW
-            </a>
+            </button>
           </div>
 
           <div className="md:hidden">
@@ -82,19 +116,33 @@ const Navbar: React.FC = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => handleLinkClick(e, link.href)}
                   className="text-xl font-black text-blue-900 uppercase tracking-tighter"
                 >
                   {link.name}
                 </a>
               ))}
-              <a
-                href="#contact"
-                onClick={() => setIsOpen(false)}
+
+              <button
+                onClick={() => {
+                  onNavigate?.('donate');
+                  setIsOpen(false);
+                }}
+                className="w-full border-2 border-amber-500 text-amber-600 py-5 rounded-2xl text-xl font-black flex items-center justify-center gap-3"
+              >
+                <Heart className="w-6 h-6" />
+                DONATE
+              </button>
+
+              <button
+                onClick={() => {
+                  onEnrollClick?.();
+                  setIsOpen(false);
+                }}
                 className="w-full bg-amber-500 text-blue-900 text-center py-5 rounded-2xl text-xl font-black shadow-xl"
               >
                 ENROLL NOW
-              </a>
+              </button>
             </div>
           </div>
         </div>

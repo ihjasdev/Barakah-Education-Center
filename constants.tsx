@@ -44,6 +44,7 @@ export const COURSES: Course[] = [
     instructor: {
       name: "Ihjas Abdullah",
       role: "Integration Lead",
+      education: "BICT(Hons)",
       bio: "Software Engineer with 3+ years of experience in building modern web applications and AI-integrated systems. Specialized in full-stack development using React, Next.js, and Agentic AI workflows. passionate about teaching and empowering the next generation of developers.",
       image: Instructor1,
       linkedin: "https://www.linkedin.com/in/ihjasabdullah/"
@@ -62,7 +63,15 @@ export const COURSES: Course[] = [
       { month: 'Month 1', topics: ['Professional Vocabulary & Grammar', 'Effective Listening', 'Constructing Clear Messages'] },
       { month: 'Month 2', topics: ['Business Writing (Emails, Reports)', 'Presentation Skills', 'Negotiation Techniques'] },
       { month: 'Month 3', topics: ['Corporate Etiquette', 'Mock Global Meetings', 'Final Fluency Assessment'] }
-    ]
+    ],
+    instructor: {
+      name: "Ihjas Abdullah",
+      role: "Integration Lead",
+      education: "BICT(Hons)",
+      bio: "Software Engineer with 3+ years of experience in building modern web applications and AI-integrated systems. Specialized in full-stack development using React, Next.js, and Agentic AI workflows. passionate about teaching and empowering the next generation of developers.",
+      image: Instructor1,
+      linkedin: "https://www.linkedin.com/in/ihjasabdullah/"
+    }
   },
   {
     id: 'cad-bs',
@@ -77,7 +86,15 @@ export const COURSES: Course[] = [
       { month: 'Month 1', topics: ['AutoCAD Essentials', 'Geometric Construction', 'Dimensioning & Layering'] },
       { month: 'Month 2', topics: ['Mechanical & Plumbing Systems', 'Reading Blueprints', 'Material Standards'] },
       { month: 'Month 3', topics: ['Electrical Systems Layout', 'MEP Project Coordination', 'Industry Portfolio Creation'] }
-    ]
+    ],
+    instructor: {
+      name: "Ihjas Abdullah",
+      role: "Integration Lead",
+      education: "BICT(Hons)",
+      bio: "Software Engineer with 3+ years of experience in building modern web applications and AI-integrated systems. Specialized in full-stack development using React, Next.js, and Agentic AI workflows. passionate about teaching and empowering the next generation of developers.",
+      image: Instructor1,
+      linkedin: "https://www.linkedin.com/in/ihjasabdullah/"
+    }
   }
 ];
 

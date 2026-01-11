@@ -17,6 +17,7 @@ export interface Course {
   instructor?: {
     name: string;
     role: string;
+    education?: string;
     bio: string;
     image: string;
     linkedin?: string;
