@@ -14,6 +14,7 @@ export interface Course {
   }[];
   features: string[];
   colorClass: string;
+  modulePdf?: string;
   instructor?: {
     name: string;
     role: string;

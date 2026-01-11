@@ -7,6 +7,7 @@ import Sabras from './assets/sabras.jpeg';
 import Sabran from './assets/sabran.jpeg';
 import Girl from './assets/girl.jpg';
 import CAD from './assets/Autocad.jpg';
+import WebDevPdf from './assets/Web Development Modules.pdf';
 
 export const COURSES: Course[] = [
   {
@@ -17,6 +18,7 @@ export const COURSES: Course[] = [
     icon: <BrainCircuit className="w-8 h-8" />,
     duration: '3 Months Certificate',
     colorClass: 'from-blue-900 to-blue-700',
+    modulePdf: WebDevPdf,
     features: ['HTML5 & Semantic Web', 'Responsive Design (Bootstrap)', 'JS DOM Manipulation', 'AI-Assisted Debugging', 'Web Hosting & Git'],
     timeline: [
       {
@@ -59,6 +61,7 @@ export const COURSES: Course[] = [
     icon: <Languages className="w-8 h-8" />,
     duration: '3 Months Certificate',
     colorClass: 'from-amber-600 to-amber-500',
+    modulePdf: '#',
     features: ['Business Writing', 'Public Speaking', 'Mock Interviews', 'Email Etiquette'],
     timeline: [
       { month: 'Month 1', topics: ['Professional Vocabulary & Grammar', 'Effective Listening', 'Constructing Clear Messages'] },
@@ -82,6 +85,7 @@ export const COURSES: Course[] = [
     icon: <Building2 className="w-8 h-8" />,
     duration: '3 Months Certificate',
     colorClass: 'from-blue-800 to-amber-600',
+    modulePdf: '#',
     features: ['2D/3D AutoCAD', 'MEP Design', 'Electrical Load Calc', 'HVAC Systems'],
     timeline: [
       { month: 'Month 1', topics: ['AutoCAD Essentials', 'Geometric Construction', 'Dimensioning & Layering'] },
@@ -151,7 +155,7 @@ export const NEWS_FEED = [
     author: "Barakah Education Center",
     date: "3 days ago",
     content: "Deep dive into AutoCAD & MEP Engineering. Practical sessions are where the real learning happens!  #Engineering #CAD #SkillBuilding",
-    image:CAD,
+    image: CAD,
     likes: 18,
     comments: 3
   }

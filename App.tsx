@@ -11,6 +11,7 @@ import DonatePage from './components/DonatePage';
 import Gallery from './components/Gallery';
 import ApplicationModal from './components/ApplicationModal';
 import NewsFeed from './components/NewsFeed';
+import CourseCatalog from './components/CourseCatalog';
 import { COURSES, TESTIMONIALS, PARTNERS } from './constants';
 import { Course } from './types';
 import { GraduationCap, Award, Users, TrendingUp, Trees, Heart, Star, Sparkles, Send } from 'lucide-react';
@@ -18,10 +19,10 @@ import ITCenter from './assets/class2.jpeg';
 
 const App: React.FC = () => {
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
-  const [currentPage, setCurrentPage] = useState<'home' | 'donate'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'donate' | 'catalog'>('home');
   const [isApplicationModalOpen, setIsApplicationModalOpen] = useState(false);
 
-  const navigateTo = (page: 'home' | 'donate') => {
+  const navigateTo = (page: 'home' | 'donate' | 'catalog') => {
     setCurrentPage(page);
     window.scrollTo(0, 0);
   };
@@ -165,12 +166,14 @@ const App: React.FC = () => {
             {/* Inquiry Form */}
             <InquiryForm onEnrollClick={() => setIsApplicationModalOpen(true)} />
           </>
+        ) : currentPage === 'catalog' ? (
+          <CourseCatalog onBack={() => navigateTo('home')} />
         ) : (
           <DonatePage />
         )}
       </main>
 
-      <Footer />
+      <Footer onNavigate={navigateTo} />
       <WhatsAppButton />
 
       {/* Course Details Modal */}

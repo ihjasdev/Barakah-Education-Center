@@ -3,15 +3,19 @@ import React from 'react';
 import { Facebook, Twitter, Linkedin, Instagram, MapPin, Trees, Mail, PhoneCall } from 'lucide-react';
 import Logo from '../assets/Barakah-white logo.png';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  onNavigate?: (page: 'home' | 'donate' | 'catalog') => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
     <footer className="bg-blue-950 text-white pt-32 pb-12 overflow-hidden relative">
       <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 rounded-full blur-[100px]"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-8">
-              <div className={`rounded-lg transition-colors`}>
+            <div className="flex items-center gap-3 mb-8" onClick={() => onNavigate?.('home')}>
+              <div className={`rounded-lg transition-colors cursor-pointer`}>
                 <img src={Logo} alt="Barakah Charity Logo" className="h-24 w-auto object-contain" />
               </div>
             </div>
@@ -30,8 +34,29 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-xl font-black mb-10 tracking-tighter text-amber-500 uppercase">Quick Navigation</h4>
             <ul className="space-y-5 text-slate-400 font-bold">
-              {['Home', 'Course Catalog', 'Our Impact', 'About Charity', 'Contact Support'].map((link) => (
-                <li key={link}><a href="#" className="hover:text-white transition-colors flex items-center group"><span className="w-0 group-hover:w-3 h-0.5 bg-amber-500 mr-0 group-hover:mr-2 transition-all"></span>{link}</a></li>
+              {[
+                { name: 'Home', page: 'home' },
+                { name: 'Course Catalog', page: 'catalog' },
+                { name: 'Our Impact', href: '#impact' },
+                { name: 'About Charity', href: 'https://barakah.ch/en/' },
+                { name: 'Contact Support', href: '#contact' }
+              ].map((link) => (
+                <li key={link.name}>
+                  {link.page ? (
+                    <button
+                      onClick={() => onNavigate?.(link.page as any)}
+                      className="hover:text-white transition-colors flex items-center group uppercase text-xs tracking-widest"
+                    >
+                      <span className="w-0 group-hover:w-3 h-0.5 bg-amber-500 mr-0 group-hover:mr-2 transition-all"></span>
+                      {link.name}
+                    </button>
+                  ) : (
+                    <a href={link.href} className="hover:text-white transition-colors flex items-center group uppercase text-xs tracking-widest">
+                      <span className="w-0 group-hover:w-3 h-0.5 bg-amber-500 mr-0 group-hover:mr-2 transition-all"></span>
+                      {link.name}
+                    </a>
+                  )}
+                </li>
               ))}
             </ul>
           </div>
