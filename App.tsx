@@ -12,6 +12,7 @@ import Gallery from './components/Gallery';
 import ApplicationModal from './components/ApplicationModal';
 import NewsFeed from './components/NewsFeed';
 import CourseCatalog from './components/CourseCatalog';
+import ScrollToTop from './components/ScrollToTop';
 import { COURSES, TESTIMONIALS, PARTNERS } from './constants';
 import { Course } from './types';
 import { GraduationCap, Award, Users, TrendingUp, Trees, Heart, Star, Sparkles, Send } from 'lucide-react';
@@ -175,6 +176,7 @@ const App: React.FC = () => {
 
       <Footer onNavigate={navigateTo} />
       <WhatsAppButton />
+      <ScrollToTop />
 
       {/* Course Details Modal */}
       <CourseDetails
