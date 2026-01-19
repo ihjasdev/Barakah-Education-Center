@@ -44,7 +44,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <li key={link.name}>
                   {link.page ? (
                     <button
-                      onClick={() => onNavigate?.(link.page as any)}
+                      onClick={() => onNavigate?.(link.page as 'home' | 'donate' | 'catalog')}
                       className="hover:text-white transition-colors flex items-center group uppercase text-xs tracking-widest"
                     >
                       <span className="w-0 group-hover:w-3 h-0.5 bg-amber-500 mr-0 group-hover:mr-2 transition-all"></span>
