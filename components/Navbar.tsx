@@ -4,9 +4,9 @@ import { Menu, X, Heart } from 'lucide-react';
 import Logo from '../assets/Barakah-education-center.png';
 
 interface NavbarProps {
-  onNavigate?: (page: 'home' | 'donate') => void;
+  onNavigate?: (page: 'home' | 'donate' | 'catalog') => void;
   onEnrollClick?: () => void;
-  currentPage?: 'home' | 'donate';
+  currentPage?: 'home' | 'donate' | 'catalog';
 }
 
 const Navbar: React.FC<NavbarProps> = ({ onNavigate, onEnrollClick, currentPage = 'home' }) => {
