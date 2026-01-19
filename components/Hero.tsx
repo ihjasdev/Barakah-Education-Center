@@ -28,11 +28,11 @@ const Hero: React.FC = () => {
               <Trees className="w-4 h-4 mr-2" /> Founded on Trust & Excellence
             </div>
             <h1 className="text-5xl lg:text-8xl font-black text-white leading-[0.9] mb-8 tracking-tighter">
-              Skills for <span className="text-amber-500">Tomorrow</span>. <br />
-              Results <span className="underline decoration-amber-500/30 underline-offset-8">Today</span>.
+              Barakah Charity <br />
+              <span className="text-amber-500">Education Center</span>.
             </h1>
             <p className="text-xl text-slate-300 mb-12 leading-relaxed max-w-xl font-medium">
-              Barakah Charity Education Center is Sri Lanka's premier destination for specialized 3-month courses. Transform your career with AI, Language, and Engineering mastery.
+              Sri Lanka's premier destination for specialized Web Development, AI, and Engineering courses. Transform your career with Barakah Charity Education Center.
             </p>
             <div className="flex flex-col sm:flex-row gap-5">
               <a

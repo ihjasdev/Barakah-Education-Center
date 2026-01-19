@@ -10,25 +10,25 @@ const Gallery: React.FC = () => {
         {
             src: Class1,
             category: 'Collaborative Learning',
-            title: 'Group Projects',
+            title: 'Web Development Group Projects',
             size: 'col-span-1 md:col-span-2 row-span-2'
         },
         {
             src: Class3,
             category: 'Modern Facilities',
-            title: 'State-of-the-art Labs',
+            title: 'Advanced Computer Labs Kinniya',
             size: 'col-span-1'
         },
         {
             src: Class4,
             category: 'Student Life',
-            title: 'Community Events',
+            title: 'Barakah Education Center Events',
             size: 'col-span-1'
         },
         {
             src: Class2,
             category: 'Mentorship',
-            title: 'Expert Guidance',
+            title: 'Expert AI & Tech Guidance',
             size: 'col-span-1 md:col-span-2'
         }
     ];

@@ -8,6 +8,8 @@ interface SEOProps {
     ogType?: string;
     ogImage?: string;
     twitterHandle?: string;
+    keywords?: string;
+    jsonLd?: object;
 }
 
 const SEO: React.FC<SEOProps> = ({
@@ -17,6 +19,8 @@ const SEO: React.FC<SEOProps> = ({
     ogType = "website",
     ogImage = "/assets/og-image.jpg", // Default OG image
     twitterHandle = "@BarakahEdu",
+    keywords = "Barakah Education Center, Barakah Charity, Web Development Course Sri Lanka, Technical Training, AI Dev, CAD MEP Engineering",
+    jsonLd,
 }) => {
     const siteName = "Barakah Education Center";
     const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
@@ -26,6 +30,7 @@ const SEO: React.FC<SEOProps> = ({
             {/* Standard Metadata */}
             <title>{fullTitle}</title>
             <meta name="description" content={description} />
+            <meta name="keywords" content={keywords} />
             <link rel="canonical" href={canonical} />
 
             {/* OpenGraph Tags */}
@@ -42,6 +47,13 @@ const SEO: React.FC<SEOProps> = ({
             <meta name="twitter:description" content={description} />
             {twitterHandle && <meta name="twitter:site" content={twitterHandle} />}
             {ogImage && <meta name="twitter:image" content={ogImage} />}
+
+            {/* JSON-LD Structured Data */}
+            {jsonLd && (
+                <script type="application/ld+json">
+                    {JSON.stringify(jsonLd)}
+                </script>
+            )}
         </Helmet>
     );
 };

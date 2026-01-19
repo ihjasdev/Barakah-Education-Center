@@ -33,15 +33,76 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-white selection:bg-amber-200 selection:text-blue-900">
       {currentPage === 'home' && !selectedCourse && (
         <SEO
-          title="Professional Technical Training & Scholarships"
-          description="Join Barakah Education Center for expert training in Web Development, Graphic Design, and more. Empowering Sri Lankan youth through quality education."
+          title="Barakah Charity Education Center | Professional Web Development & Technical Training"
+          description="Barakah Charity Education Center in Kinniya, Sri Lanka offers industry-professional Web Development, CAD, and MEP courses with scholarships for youth."
+          keywords="Barakah Charity Education Center, Barakah Education Center, Kinniya, Web Development course, Vocational Training Sri Lanka, AI Development, Engineering Scholarships"
+          jsonLd={{
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "EducationalOrganization",
+                "name": "Barakah Charity Education Center",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Soorangal Junction, Kinniya-04",
+                  "addressLocality": "Kinniya",
+                  "addressCountry": "LK"
+                },
+                "url": "https://barakah-edu.com",
+                "logo": "https://barakah-edu.com/assets/Barakah-education-center.png",
+                "sameAs": [
+                  "https://www.linkedin.com/in/ihjasabdullah/"
+                ]
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://barakah-edu.com"
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "What courses does Barakah Charity Education Center offer?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "We offer professional 3-month courses in AI-Powered Web Development, Communication English, and CAD & Building Services (MEP Engineering)."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Where is Barakah Education Center located?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "We are located at Soorangal Junction, Kinniya-04, Sri Lanka."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Are there scholarships available?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Yes, as a charity-backed initiative, we provide scholarships and affordable training for underprivileged talented youth in Sri Lanka."
+                    }
+                  }
+                ]
+              }
+            ]
+          }}
         />
       )}
       {currentPage === 'catalog' && (
         <SEO
-          title="Course Catalog | Technical Programs"
-          description="Explore our wide range of technical courses including Web Development, UI/UX Design, and Digital Marketing."
-          canonical="https://barakah-edu.com/catalog"
+          title="Course Catalog | Web Development & Engineering Programs"
+          description="Explore our wide range of technical courses including AI-Powered Web Development, AutoCAD, and MEP Engineering at Barakah Education Center."
+          keywords="Course Catalog, Web Development course Sri Lanka, AI Agents, MEP Engineering course, AutoCAD training Kinniya"
         />
       )}
       {currentPage === 'donate' && (
@@ -53,8 +114,27 @@ const App: React.FC = () => {
       )}
       {selectedCourse && (
         <SEO
-          title={`${selectedCourse.title} Course`}
-          description={`Master ${selectedCourse.title} with our intensive 12-week program. ${selectedCourse.description}`}
+          title={`${selectedCourse.title} Professional Course | Barakah Education Center`}
+          description={`Master ${selectedCourse.title} with our intensive 12-week professional program in Kinniya. ${selectedCourse.description}`}
+          keywords={`${selectedCourse.title}, ${selectedCourse.subtitle}, Barakah Education, Web Development Kinniya, Engineering training`}
+          jsonLd={{
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "name": selectedCourse.title,
+            "description": selectedCourse.description,
+            "provider": {
+              "@type": "EducationalOrganization",
+              "name": "Barakah Charity Education Center",
+              "sameAs": "https://barakah-edu.com"
+            },
+            "educationalCredentialAwarded": "Barakah Professional Certificate",
+            "hasCourseInstance": {
+              "@type": "CourseInstance",
+              "courseMode": "In-Person",
+              "duration": "P3M",
+              "courseWorkload": "12 weeks"
+            }
+          }}
         />
       )}
       <Navbar
@@ -131,7 +211,7 @@ const App: React.FC = () => {
                     <div className="relative z-10 rounded-[3rem] overflow-hidden border-8 border-white/5 shadow-3xl">
                       <img
                         src={ITCenter}
-                        alt="Education Impact"
+                        alt="Students learning at Barakah Charity Education Center"
                         className="w-full h-[600px] object-cover"
                       />
                     </div>
