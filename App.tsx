@@ -13,6 +13,7 @@ import ApplicationModal from './components/ApplicationModal';
 import NewsFeed from './components/NewsFeed';
 import CourseCatalog from './components/CourseCatalog';
 import ScrollToTop from './components/ScrollToTop';
+import SEO from './components/SEO';
 import { COURSES, TESTIMONIALS, PARTNERS } from './constants';
 import { Course } from './types';
 import { GraduationCap, Award, Users, TrendingUp, Trees, Heart, Star, Sparkles, Send } from 'lucide-react';
@@ -30,6 +31,32 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white selection:bg-amber-200 selection:text-blue-900">
+      {currentPage === 'home' && !selectedCourse && (
+        <SEO
+          title="Professional Technical Training & Scholarships"
+          description="Join Barakah Education Center for expert training in Web Development, Graphic Design, and more. Empowering Sri Lankan youth through quality education."
+        />
+      )}
+      {currentPage === 'catalog' && (
+        <SEO
+          title="Course Catalog | Technical Programs"
+          description="Explore our wide range of technical courses including Web Development, UI/UX Design, and Digital Marketing."
+          canonical="https://barakah-edu.com/catalog"
+        />
+      )}
+      {currentPage === 'donate' && (
+        <SEO
+          title="Support Education | Donate"
+          description="Help us provide scholarships and technical training to underprivileged youth in Sri Lanka. Your donation transforms lives."
+          canonical="https://barakah-edu.com/donate"
+        />
+      )}
+      {selectedCourse && (
+        <SEO
+          title={`${selectedCourse.title} Course`}
+          description={`Master ${selectedCourse.title} with our intensive 12-week program. ${selectedCourse.description}`}
+        />
+      )}
       <Navbar
         onNavigate={navigateTo}
         currentPage={currentPage}
