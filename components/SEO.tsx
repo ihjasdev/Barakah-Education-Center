@@ -17,7 +17,7 @@ const SEO: React.FC<SEOProps> = ({
     description = "Barakah Education Center provides high-quality, professional technical training in Sri Lanka. From Web Development to Graphic Design, we empower youth through education and scholarships.",
     canonical = "https://barakah-edu.com",
     ogType = "website",
-    ogImage = "/assets/og-image.jpg", // Default OG image
+    ogImage = "/assets/og-image.png", // Default OG image
     twitterHandle = "@BarakahEdu",
     keywords = "Barakah Education Center, Barakah Charity, Web Development Course Sri Lanka, Technical Training, AI Dev, CAD MEP Engineering",
     jsonLd,
@@ -31,6 +31,7 @@ const SEO: React.FC<SEOProps> = ({
             <title>{fullTitle}</title>
             <meta name="description" content={description} />
             <meta name="keywords" content={keywords} />
+            <meta name="google-site-verification" content="EBq558XQJnr6-BUYEbBsCTKRrcbXdjMpkE3-OjFGvM4" />
             <link rel="canonical" href={canonical} />
 
             {/* OpenGraph Tags */}
