@@ -31,7 +31,6 @@ const SEO: React.FC<SEOProps> = ({
             <title>{fullTitle}</title>
             <meta name="description" content={description} />
             <meta name="keywords" content={keywords} />
-            <meta name="google-site-verification" content="EBq558XQJnr6-BUYEbBsCTKRrcbXdjMpkE3-OjFGvM4" />
             <link rel="canonical" href={canonical} />
 
             {/* OpenGraph Tags */}
