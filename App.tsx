@@ -34,7 +34,7 @@ const App: React.FC = () => {
       {currentPage === 'home' && !selectedCourse && (
         <SEO
           title="Barakah Charity Education Center | Professional Web Development & Technical Training"
-          description="Barakah Charity Education Center in Kinniya, Sri Lanka offers industry-professional Web Development, CAD, and MEP courses with scholarships for youth."
+          description="Barakah Charity Education Center in Kinniya, Sri Lanka offers industry-professional Web Development, CAD, and Communication English courses with scholarships for youth."
           keywords="Barakah Charity Education Center, Barakah Education Center, Kinniya, Web Development course, Vocational Training Sri Lanka, AI Development, Engineering Scholarships"
           jsonLd={{
             "@context": "https://schema.org",
