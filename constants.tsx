@@ -6,23 +6,25 @@ import Instructor1 from './assets/profile.png';
 import Sabras from './assets/sabras.jpeg';
 import Sabran from './assets/sabran.jpeg';
 import Girl from './assets/girl.jpg';
-import CAD from './assets/Autocad.jpg';
+import CAD from './assets/CAD-Class.png';
 import WebDevPdf from './assets/Web Development Modules.pdf';
+import Class4 from './assets/class4.jpeg';
+import EnglishClass from './assets/English.png';
 
 export const COURSES: Course[] = [
   {
     id: 'ai-dev',
-    title: 'AI-Powered Web Development',
+    title: 'AI-Assisted Web Development',
     subtitle: 'Vibe Coding & AI Agents',
-    description: 'Master the art of building production-ready websites using Natural Language. Learn to orchestrate AI Agents with Cursor, Antigravity, AIStudio and Lovable.',
+    description: 'Master the art of building production-ready websites using Natural Language with vibe coding. Learn to orchestrate AI Agents with Cursor, Antigravity, AIStudio and Lovable.',
     icon: <BrainCircuit className="w-8 h-8" />,
     duration: '3 Months Certificate',
     colorClass: 'from-blue-900 to-blue-700',
     modulePdf: WebDevPdf,
-    features: ['HTML5 & Semantic Web', 'Responsive Design (Bootstrap)', 'JS DOM Manipulation', 'AI-Assisted Debugging', 'Web Hosting & Git'],
+    features: ['HTML5 & Semantic Web', 'Responsive Design (Bootstrap)', 'Vibe Coding', 'AI-Assisted Debugging', 'Git and Github','Web Hosting'],
     timeline: [
       {
-        month: 'Month 1', topics: ["Introduction to Client-Server Models & Dev Environments",
+        month: 'Month 1', topics: ["Introduction to Web Technologies & AI Fundamentals",
           "HTML5 Fundamentals: Structure, Forms, and Semantic Tags",
           "CSS Essentials: Box Model, Flexbox, and Grid Layouts",
           "Mini Project: Personal Profile & Styled Portfolio Page"]
@@ -79,7 +81,7 @@ export const COURSES: Course[] = [
   },
   {
     id: 'cad-bs',
-    title: 'CAD & Building Services',
+    title: 'CAD & Building Studies',
     subtitle: 'AutoCAD & MEP Engineering',
     description: 'Specialize in technical design. Learn industry-standard AutoCAD and the complexities of Mechanical, Electrical, and Plumbing (MEP) systems.',
     icon: <Building2 className="w-8 h-8" />,
@@ -106,26 +108,26 @@ export const COURSES: Course[] = [
 export const TESTIMONIALS = [
   {
     name: "Mohamed Sabran",
-    role: "Web developer",
+    role: "Student, Freelancer",
     content: "The AI Development course changed how I code. I went from struggling with syntax to building full production ready websites in weeks using AI agents.",
     avatar: Sabras
   },
   {
-    name: "Sarah Fathima",
-    role: "Project Coordinator",
+    name: "Rozana",
+    role: "Student, Freelancer",
     content: "The English for Professionals course gave me the confidence to lead international meetings. Highly recommended for corporate staff.",
     avatar: Girl
   },
   {
     name: "Mohamed Sabras",
-    role: "MEP Engineer",
+    role: "Student, Freelancer",
     content: "Detailed and practical CAD training. The Building Services modules were exactly what I needed for my current role in Dubai.",
     avatar: Sabran
   }
 ];
 
 export const PARTNERS = [
-  "barakah Charity", "British Council", "TVEC"
+  "Swiss-Barakah Charity", "Barakah Education Center", "TVEC-Ongoing"
 ];
 
 export const WHATSAPP_NUMBER = "+94771380123";
@@ -136,18 +138,18 @@ export const NEWS_FEED = [
     id: 1,
     author: "Barakah Education Center",
     date: "2 hours ago",
-    content: "Exciting news! Our AI-Powered Web Development course (Batch 2) is now open for enrollment. Learn to build production-ready sites with AI agents. 🚀 #AI #WebDev #FutureSkills",
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800",
-    likes: 24,
-    comments: 5
+    content: "Exciting news! Our AI-Assisted Web Development course (Batch 2) is now open for enrollment. Learn to build production-ready sites with AI agents. 🚀 #AI #WebDev #FutureSkills",
+    image: Class4,
+    likes: 154,
+    comments: 50
   },
   {
     id: 2,
     author: "Barakah Education Center",
     date: "1 month ago",
     content: "Highlights from our recent English for Professionals workshop! Our students are mastering corporate communication with confidence. 🤝 #ProfessionalEnglish #CareerGrowth",
-    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800",
-    likes: 42,
+    image: EnglishClass,
+    likes: 142,
     comments: 12
   },
   {
@@ -156,7 +158,7 @@ export const NEWS_FEED = [
     date: "3 days ago",
     content: "Deep dive into AutoCAD & MEP Engineering. Practical sessions are where the real learning happens!  #Engineering #CAD #SkillBuilding",
     image: CAD,
-    likes: 18,
-    comments: 3
+    likes: 180,
+    comments: 13
   }
 ];

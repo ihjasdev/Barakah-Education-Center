@@ -73,7 +73,7 @@ const App: React.FC = () => {
                     "name": "What courses does Barakah Charity Education Center offer?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "We offer professional 3-month courses in AI-Powered Web Development, Communication English, and CAD & Building Services (MEP Engineering)."
+                      "text": "We offer professional 3-month courses in AI-Assisted Web Development, Communication English, and CAD & Building Services (MEP Engineering)."
                     }
                   },
                   {
@@ -101,7 +101,7 @@ const App: React.FC = () => {
       {currentPage === 'catalog' && (
         <SEO
           title="Course Catalog | Web Development & Engineering Programs"
-          description="Explore our wide range of technical courses including AI-Powered Web Development, AutoCAD, and MEP Engineering at Barakah Education Center."
+          description="Explore our wide range of technical courses including AI-Assisted Web Development, AutoCAD, and MEP Engineering at Barakah Education Center."
           keywords="Course Catalog, Web Development course Sri Lanka, AI Agents, MEP Engineering course, AutoCAD training Kinniya"
         />
       )}

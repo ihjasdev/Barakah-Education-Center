@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
               <span className="text-amber-500">Education Center</span>.
             </h1>
             <p className="text-xl text-slate-300 mb-12 leading-relaxed max-w-xl font-medium">
-              Sri Lanka's premier destination for specialized Web Development, AI, and Engineering courses. Transform your career with Barakah Charity Education Center.
+              Sri Lanka's premier destination for specialized AI-Assisted Web Development, CAD & Building Services and Communication English courses. Transform your career with Barakah Charity Education Center.
             </p>
             <div className="flex flex-col sm:flex-row gap-5">
               <a
@@ -56,11 +56,11 @@ const Hero: React.FC = () => {
 
           <div className="hidden lg:block lg:w-2/5 relative">
             <div className="relative z-10 bg-gradient-to-br from-blue-800 to-blue-950 border border-white/10 p-10 rounded-[3rem] shadow-2xl">
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-6" >
                 {[
                   { label: 'Courses', val: '03' },
-                  { label: 'Students', val: '50+' },
-                  { label: 'Success', val: '98%' },
+                  { label: 'Students', val: '30+' },
+                  { label: 'Hours', val: '48' },
                   { label: 'Weeks', val: '12' },
                 ].map((stat, i) => (
                   <div key={i} className="p-6 bg-white/5 rounded-3xl border border-white/5 hover:bg-amber-500/10 transition-colors">
