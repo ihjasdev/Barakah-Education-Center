@@ -160,7 +160,7 @@ const App: React.FC = () => {
                     </h3>
                   </div>
                   <p className="text-lg text-slate-500 max-w-sm font-medium leading-relaxed">
-                    Unlock global opportunities with our intensive 12-week certificate programs led by industry veterans.
+                    Unlock global opportunities with our intensive 12-weeks(48 Hours) certificate programs led by industry veterans.
                   </p>
                 </div>
 

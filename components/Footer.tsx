@@ -64,9 +64,19 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div>
             <h4 className="text-xl font-black mb-10 tracking-tighter text-amber-500 uppercase">Our Programs</h4>
             <ul className="space-y-5 text-slate-400 font-bold">
-              {['Vibe Coding', 'Communication English', 'CAD & Building Studies'].map((link) => (
-                <li key={link}>
-                  <a href="#" className="hover:text-white transition-colors">{link}</a>
+              {[
+                { name: 'Vibe Coding', page: 'catalog' },
+                { name: 'Communication English', page: 'catalog' },
+                { name: 'CAD & Building Studies', page: 'catalog' }
+              ].map((link) => (
+                <li key={link.name}>
+                  <button
+                    onClick={() => onNavigate?.(link.page as 'home' | 'donate' | 'catalog')}
+                    className="hover:text-white transition-colors flex items-center group uppercase text-xs tracking-widest"
+                  >
+                    <span className="w-0 group-hover:w-3 h-0.5 bg-amber-500 mr-0 group-hover:mr-2 transition-all"></span>
+                    {link.name}
+                  </button>
                 </li>
               ))}
             </ul>
@@ -77,7 +87,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <div className="space-y-6">
               <div className="flex items-start text-slate-400 group">
                 <MapPin className="w-6 h-6 text-amber-500 mr-4 mt-1 flex-shrink-0" />
-                <span className="font-bold">vilvali, <br />Kinniya-04, Sri Lanka</span>
+                <span className="font-bold">vilveli, <br />Kinniya-04, Sri Lanka</span>
               </div>
               <div className="flex items-center text-slate-400">
                 <PhoneCall className="w-6 h-6 text-amber-500 mr-4 flex-shrink-0" />
