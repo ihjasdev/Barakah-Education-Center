@@ -10,6 +10,7 @@ import CAD from './assets/CAD-Class.png';
 import WebDevPdf from './assets/Web Development Modules.pdf';
 import Class4 from './assets/class4.jpeg';
 import EnglishClass from './assets/English.png';
+import Instructor2 from './assets/english1.png';
 
 export const COURSES: Course[] = [
   {
@@ -21,7 +22,7 @@ export const COURSES: Course[] = [
     duration: '3 Months Certificate',
     colorClass: 'from-blue-900 to-blue-700',
     modulePdf: WebDevPdf,
-    features: ['HTML5 & Semantic Web', 'Responsive Design (Bootstrap)', 'Vibe Coding', 'AI-Assisted Debugging', 'Git and Github','Web Hosting'],
+    features: ['HTML5 & Semantic Web', 'Responsive Design (Bootstrap)', 'Vibe Coding', 'AI-Assisted Debugging', 'Git and Github', 'Web Hosting'],
     timeline: [
       {
         month: 'Month 1', topics: ["Introduction to Web Technologies & AI Fundamentals",
@@ -66,17 +67,17 @@ export const COURSES: Course[] = [
     modulePdf: '#',
     features: ['Business Writing', 'Public Speaking', 'Mock Interviews', 'Email Etiquette'],
     timeline: [
-      { month: 'Month 1', topics: ['Professional Vocabulary & Grammar', 'Effective Listening', 'Constructing Clear Messages'] },
-      { month: 'Month 2', topics: ['Business Writing (Emails, Reports)', 'Presentation Skills', 'Negotiation Techniques'] },
-      { month: 'Month 3', topics: ['Corporate Etiquette', 'Mock Global Meetings', 'Final Fluency Assessment'] }
+      { month: 'Month 1', topics: ['Introduction to Communication', '* Parts of Speech (Nouns, Pronouns,Verbs,)', 'Professional Vocabulary & Grammar', 'Tenses: Basics & Usage', 'Constructing Clear Sentences', 'Effective Listening Skills'] },
+      { month: 'Month 2', topics: ['Business Writing Skills', 'Email Writing (Formal & Informal)', 'Email Etiquette & Tone', 'Report Writing (Structure & Format)', 'Grammar for Written Communication', 'Editing & Proofreading Skills'] },
+      { month: 'Month 3', topics: ['Presentation Skills', 'Presentation on Tenses & Usage', 'Public Speaking & Confidence Building', 'Interview Skills & Preparation', 'Mock Interviews (Individual & Group)', 'Feedback & CommunicationImprovement'] }
     ],
     instructor: {
-      name: "Ihjas Abdullah",
-      role: "Integration Lead",
-      education: "BICT(Hons)",
-      bio: "Software Engineer with 3+ years of experience in building modern web applications and AI-integrated systems. Specialized in full-stack development using React, Next.js, and Agentic AI workflows. passionate about teaching and empowering the next generation of developers.",
-      image: Instructor1,
-      linkedin: "https://www.linkedin.com/in/ihjasabdullah/"
+      name: "SAJEEHA BANU",
+      role: "ENGLISH INSTRUCTOR",
+      education: "HNDE & BA IN ENGLISH",
+      bio: "English Instructor with strong expertise in English language teaching and soft skills development, currently serving at NAITA Sri Lanka.With over 6 years of diverse teaching experience across primary and vocational education, I specialize in workplace communication, learner- centered instruction, and preparing technical/ vocational trainees for career success",
+      image: Instructor2,
+      linkedin: "#"
     }
   },
   {
@@ -95,12 +96,12 @@ export const COURSES: Course[] = [
       { month: 'Month 3', topics: ['Electrical Systems Layout', 'MEP Project Coordination', 'Industry Portfolio Creation'] }
     ],
     instructor: {
-      name: "Ihjas Abdullah",
-      role: "Integration Lead",
-      education: "BICT(Hons)",
-      bio: "Software Engineer with 3+ years of experience in building modern web applications and AI-integrated systems. Specialized in full-stack development using React, Next.js, and Agentic AI workflows. passionate about teaching and empowering the next generation of developers.",
+      name: "Mohamed Feros",
+      role: "Architect,Freelancer",
+      education: "BSc in Architecture",
+      bio: "Architect with 5+ years of experience in building modern designs and MEP systems. Currently freelancing in fiverr.",
       image: Instructor1,
-      linkedin: "https://www.linkedin.com/in/ihjasabdullah/"
+      linkedin: "#"
     }
   }
 ];
