@@ -11,6 +11,7 @@ import WebDevPdf from './assets/Web Development Modules.pdf';
 import Class4 from './assets/class4.jpeg';
 import EnglishClass from './assets/English.png';
 import Instructor2 from './assets/english1.png';
+import Instructor3 from './assets/feros.jpg';
 
 export const COURSES: Course[] = [
   {
@@ -100,7 +101,7 @@ export const COURSES: Course[] = [
       role: "Architect,Freelancer",
       education: "BSc in Architecture",
       bio: "Architect with 5+ years of experience in building modern designs and MEP systems. Currently freelancing in fiverr.",
-      image: Instructor1,
+      image: Instructor3,
       linkedin: "#"
     }
   }

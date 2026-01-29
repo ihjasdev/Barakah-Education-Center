@@ -23,8 +23,18 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               Transforming lives through technical excellence and humanitarian values. Proudly serving the Sri Lankan community since 2023.
             </p>
             <div className="flex space-x-5">
-              {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
-                <a key={i} href="#" className="w-12 h-12 bg-white/5 hover:bg-amber-500 hover:text-blue-950 transition-all rounded-2xl flex items-center justify-center text-slate-300 border border-white/5">
+              {[
+                { Icon: Facebook, href: 'https://www.facebook.com/swissbarakah' },
+                { Icon: Linkedin, href: 'https://www.linkedin.com/company/swiss-barakah-charity' },
+                { Icon: Instagram, href: 'https://www.instagram.com/swiss_barakah/' }
+              ].map(({ Icon, href }, i) => (
+                <a
+                  key={i}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-white/5 hover:bg-amber-500 hover:text-blue-950 transition-all rounded-2xl flex items-center justify-center text-slate-300 border border-white/5"
+                >
                   <Icon size={20} />
                 </a>
               ))}

@@ -53,8 +53,8 @@ const CourseDetails: React.FC<CourseDetailsProps> = ({ course, onClose, onEnroll
             </button>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-            <div className="lg:col-span-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            <div className="lg:col-span-7">
               <div className="flex items-center gap-4 mb-10">
                 <div className="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-900">
                   <Calendar className="w-6 h-6" />
@@ -84,7 +84,7 @@ const CourseDetails: React.FC<CourseDetailsProps> = ({ course, onClose, onEnroll
               </div>
             </div>
 
-            <div className="lg:col-span-4 space-y-10">
+            <div className="lg:col-span-5 space-y-10">
               <div className="bg-slate-900 p-8 rounded-[2rem] text-white">
                 <h4 className="flex items-center text-lg font-black uppercase tracking-widest text-amber-500 mb-6">
                   <BookOpen className="mr-3 w-5 h-5" />
@@ -105,17 +105,17 @@ const CourseDetails: React.FC<CourseDetailsProps> = ({ course, onClose, onEnroll
                     <span className="w-2 h-2 rounded-full bg-amber-500"></span>
                     Instructor
                   </h4>
-                  <div className="flex items-center gap-4 mb-4">
+                  <div className="flex items-start gap-4 mb-4">
                     <img
                       src={course.instructor.image}
                       alt={course.instructor.name}
-                      className="w-16 h-16 rounded-2xl object-cover border-2 border-slate-100"
+                      className="w-16 h-16 rounded-2xl object-cover border-2 border-slate-100 flex-shrink-0"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(course.instructor!.name)}&background=0f172a&color=fff`;
                       }}
                     />
-                    <div>
-                      <h5 className="font-black text-blue-950 text-lg icon-tight">{course.instructor.name}</h5>
+                    <div className="flex-1">
+                      <h5 className="font-black text-blue-950 text-lg leading-tight mb-1">{course.instructor.name}</h5>
                       <p className="text-amber-600 font-bold text-xs uppercase tracking-wider">{course.instructor.role}</p>
                       <p className="text-amber-600 font-bold text-xs uppercase tracking-wider">{course.instructor.education}</p>
                     </div>
