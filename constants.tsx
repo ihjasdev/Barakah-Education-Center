@@ -68,7 +68,7 @@ export const COURSES: Course[] = [
     modulePdf: '#',
     features: ['Business Writing', 'Public Speaking', 'Mock Interviews', 'Email Etiquette'],
     timeline: [
-      { month: 'Month 1', topics: ['Introduction to Communication', '* Parts of Speech (Nouns, Pronouns,Verbs,)', 'Professional Vocabulary & Grammar', 'Tenses: Basics & Usage', 'Constructing Clear Sentences', 'Effective Listening Skills'] },
+      { month: 'Month 1', topics: ['Introduction to Communication', 'Parts of Speech (Nouns, Pronouns,Verbs,)', 'Professional Vocabulary & Grammar', 'Tenses: Basics & Usage', 'Constructing Clear Sentences', 'Effective Listening Skills'] },
       { month: 'Month 2', topics: ['Business Writing Skills', 'Email Writing (Formal & Informal)', 'Email Etiquette & Tone', 'Report Writing (Structure & Format)', 'Grammar for Written Communication', 'Editing & Proofreading Skills'] },
       { month: 'Month 3', topics: ['Presentation Skills', 'Presentation on Tenses & Usage', 'Public Speaking & Confidence Building', 'Interview Skills & Preparation', 'Mock Interviews (Individual & Group)', 'Feedback & CommunicationImprovement'] }
     ],
