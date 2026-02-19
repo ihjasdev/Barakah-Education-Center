@@ -12,6 +12,7 @@ import Class4 from './assets/class4.jpeg';
 import EnglishClass from './assets/English.png';
 import Instructor2 from './assets/english1.png';
 import Instructor3 from './assets/feros.jpg';
+import CADBS from './assets/BIM-BASED ARCHITECTURAL DESIGN.pdf'
 
 export const COURSES: Course[] = [
   {
@@ -89,7 +90,7 @@ export const COURSES: Course[] = [
     icon: <Building2 className="w-8 h-8" />,
     duration: '3 Months Certificate',
     colorClass: 'from-blue-800 to-amber-600',
-    modulePdf: '#',
+    modulePdf: CADBS,
     features: ['2D/3D AutoCAD', 'MEP Design', 'Electrical Load Calc', 'HVAC Systems'],
     timeline: [
       { month: 'Month 1', topics: ['AutoCAD Essentials', 'Geometric Construction', 'Dimensioning & Layering'] },
