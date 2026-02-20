@@ -7,7 +7,7 @@ import Sabras from './assets/sabras.jpeg';
 import Sabran from './assets/sabran.jpeg';
 import Girl from './assets/girl.jpg';
 import CAD from './assets/CAD-Class.png';
-import WebDevPdf from './assets/Web Development Modules.pdf';
+import WebDevPdf from './assets/Full 2nd batch AI-Assisted Web Development.pdf';
 import Class4 from './assets/class4.jpeg';
 import EnglishClass from './assets/English.png';
 import Instructor2 from './assets/english1.png';
