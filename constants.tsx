@@ -21,7 +21,7 @@ export const COURSES: Course[] = [
     subtitle: 'Vibe Coding & AI Agents',
     description: 'Master the art of building production-ready websites using Natural Language with vibe coding. Learn to orchestrate AI Agents with Cursor, Antigravity, AIStudio and Lovable.',
     icon: <BrainCircuit className="w-8 h-8" />,
-    duration: '3 Months Certificate',
+    duration: 'Professional Certificate Masterclass -03Months',
     colorClass: 'from-blue-900 to-blue-700',
     modulePdf: WebDevPdf,
     features: ['HTML5 & Semantic Web', 'Responsive Design (Bootstrap)', 'Vibe Coding', 'AI-Assisted Debugging', 'Git and Github', 'Web Hosting'],
@@ -64,7 +64,7 @@ export const COURSES: Course[] = [
     subtitle: 'Professional & Corporate Readiness',
     description: 'Elevate your professional presence. Focus on business writing, high-impact public speaking, and corporate communication skills for the global market.',
     icon: <Languages className="w-8 h-8" />,
-    duration: '3 Months Certificate',
+    duration: 'Professional Certificate Masterclass -03Months',
     colorClass: 'from-amber-600 to-amber-500',
     modulePdf: '#',
     features: ['Business Writing', 'Public Speaking', 'Mock Interviews', 'Email Etiquette'],
@@ -84,24 +84,25 @@ export const COURSES: Course[] = [
   },
   {
     id: 'cad-bs',
-    title: 'CAD & Building Studies',
-    subtitle: 'AutoCAD & MEP Engineering',
-    description: 'Specialize in technical design. Learn industry-standard AutoCAD and the complexities of Mechanical, Electrical, and Plumbing (MEP) systems.',
+    title: 'BIM-Based Architectural Design',
+    subtitle: 'BIM with Revit',
+    description: 'Master AEC-standard architectural design and BIM workflows. Build practical skills in spatial planning, material use, structural coordination, and create accurate, professional-ready digital models and drawings.',
     icon: <Building2 className="w-8 h-8" />,
-    duration: '3 Months Certificate',
+    duration: 'Professional Certificate Masterclass-03Months',
     colorClass: 'from-blue-800 to-amber-600',
     modulePdf: CADBS,
-    features: ['2D/3D AutoCAD', 'MEP Design', 'Electrical Load Calc', 'HVAC Systems'],
+    features: ['BIM Foundations', 'Architectural Drawings + Revit Execution', 'BIM Intelligence + Documentation', 'Design Visual Project'],
     timeline: [
-      { month: 'Month 1', topics: ['AutoCAD Essentials', 'Geometric Construction', 'Dimensioning & Layering'] },
-      { month: 'Month 2', topics: ['Mechanical & Plumbing Systems', 'Reading Blueprints', 'Material Standards'] },
-      { month: 'Month 3', topics: ['Electrical Systems Layout', 'MEP Project Coordination', 'Industry Portfolio Creation'] }
+      { month: 'Phase 1', topics: ['What is architecture vs drafting', 'Design process overview', 'Reading drawings basics', 'Introduction to BIM concept', 'Revit interface overview'] },
+      { month: 'Phase 2', topics: ['Architectural design principles', 'Vertical design logic with accurate Revit sectional detailing', 'BIM-based modeling of plans, elevations, sections & roof systems', '3D modeling, materials application & presentation views'] },
+      { month: 'Phase 3', topics: ['Annotation standards', 'Sheets & layouts', 'Schedules', 'Legends', 'Material takeoff basics', 'Material takeoff basics', 'View templates'] },
+      { month: 'Phase 4', topics: ['Students model Guided project step by step', 'Students design and model their own Residential project', 'Students to Create Their Own Industrial Portfolio'] }
     ],
     instructor: {
       name: "Mohamed Feros",
-      role: "Architect,Freelancer",
-      education: "BSc in Architecture",
-      bio: "Architect with 5+ years of experience in building modern designs and MEP systems. Currently freelancing in fiverr.",
+      role: "3D Artist,Architectural Designer",
+      education: "BA in Architectural Technology",
+      bio: "Architect with 6+ years of experience in building modern designs and MEP systems. Currently freelancing in fiverr.",
       image: Instructor3,
       linkedin: "#"
     }
@@ -111,7 +112,7 @@ export const COURSES: Course[] = [
 export const TESTIMONIALS = [
   {
     name: "Mohamed Sabran",
-    role: "Student, Freelancer",
+    role: "Development Officer, Freelancer",
     content: "The AI Development course changed how I code. I went from struggling with syntax to building full production ready websites in weeks using AI agents.",
     avatar: Sabras
   },
@@ -123,7 +124,7 @@ export const TESTIMONIALS = [
   },
   {
     name: "Mohamed Sabras",
-    role: "Student, Freelancer",
+    role: "Businessman, Freelancer",
     content: "Detailed and practical CAD training. The Building Services modules were exactly what I needed for my current role in Dubai.",
     avatar: Sabran
   }

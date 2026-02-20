@@ -38,7 +38,7 @@ const CourseDetails: React.FC<CourseDetailsProps> = ({ course, onClose, onEnroll
                     {course.duration}
                   </span>
                   <div className="flex items-center gap-2">
-                    <span className="text-blue-900/60 font-bold text-[10px] uppercase">Barakah Professional Certificate with NVQ Level 4 (TVEC)</span>
+                    <span className="text-blue-900/60 font-bold text-[10px] uppercase">Barakah Professional Training Center</span>
                   </div>
                 </div>
               </div>

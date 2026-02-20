@@ -77,7 +77,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               {[
                 { name: 'Vibe Coding', page: 'catalog' },
                 { name: 'Communication English', page: 'catalog' },
-                { name: 'CAD & Building Studies', page: 'catalog' }
+                { name: 'BIM-BASED ARCHITECTURAL DESIGN', page: 'catalog' }
               ].map((link) => (
                 <li key={link.name}>
                   <button
