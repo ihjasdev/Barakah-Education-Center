@@ -114,7 +114,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-slate-500 font-bold text-sm">
-            © {new Date().getFullYear()} Barakah Charity Education Center Sri Lanka.
+            © {new Date().getFullYear()} Barakah Charity Education Center Sri Lanka. Developed by <a href="https://www.isitsolution.com/" className="hover:text-amber-500" target="_blank" rel="noopener noreferrer">IS-IT Solution</a>. All rights reserved.
           </p>
           <div className="flex gap-8 text-xs font-black uppercase tracking-widest text-slate-500">
             <a href="#" className="hover:text-amber-500">Privacy Policy</a>

@@ -131,7 +131,7 @@ export const TESTIMONIALS = [
 ];
 
 export const PARTNERS = [
-  "Swiss-Barakah Charity", "Barakah Education Center", "TVEC-Ongoing"
+  "Swiss-Barakah Charity", "Barakah Education Center", "NAITA-Ongoing"
 ];
 
 export const WHATSAPP_NUMBER = "+94771380123";

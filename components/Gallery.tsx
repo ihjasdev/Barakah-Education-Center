@@ -79,10 +79,10 @@ const Gallery: React.FC = () => {
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20">
                     {[
-                        { icon: Users, label: "Active Students", value: "30+" },
+                        { icon: Users, label: "Active Students", value: "65+" },
                         { icon: Sparkles, label: "Events Yearly", value: "12+" },
                         { icon: Coffee, label: "Study Zones", value: "4" },
-                        { icon: Users, label: "Alumni Network", value: "50+" },
+                        { icon: Users, label: "Alumni Network", value: "60+" },
                     ].map((stat, i) => (
                         <div key={i} className="text-center p-6 bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
                             <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4 text-amber-600">

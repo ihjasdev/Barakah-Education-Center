@@ -12,9 +12,19 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ onNavigate, onEnrollClick, currentPage = 'home' }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      setScrolled(currentScrollY > 50);
+      setIsVisible(currentScrollY < 80 || currentScrollY < lastScrollY);
+      lastScrollY = currentScrollY;
+    };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -45,12 +55,12 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, onEnrollClick, currentPage 
   ];
 
   return (
-    <nav className={`fixed z-50 transition-all duration-500 ${scrolled ? 'top-4 inset-x-0 mx-auto w-[95%] max-w-7xl rounded-2xl bg-white/90 backdrop-blur-md shadow-2xl py-2 border border-white/20' : 'top-0 w-full bg-white py-3 shadow-none'}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className={`fixed z-50 transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} ${scrolled ? 'top-2 inset-x-0 mx-auto w-[95%] max-w-7xl rounded-2xl bg-white/90 backdrop-blur-md shadow-2xl py-1 border border-white/20 xl:top-3 xl:py-2' : 'top-0 w-full bg-white py-1 xl:py-2 shadow-none'}`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-5 lg:px-5 xl:px-7">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-3 group cursor-pointer">
             <div className={`rounded-lg transition-colors`}>
-              <img src={Logo} alt="Barakah Charity Logo" className={`${scrolled ? 'h-20' : 'h-28'} w-auto object-contain transition-all duration-500`} />
+              <img src={Logo} alt="Barakah Charity Logo" className={`${scrolled ? 'h-10 lg:h-10 xl:h-16 max-[1366px]:h-10' : 'h-12 lg:h-12 xl:h-20 max-[1366px]:h-10'} w-auto object-contain transition-all duration-500`} />
             </div>
             {/* <div className="flex flex-col">
               <span className={`text-xl font-black leading-none tracking-tight text-blue-900`}>
@@ -62,13 +72,13 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, onEnrollClick, currentPage 
             </div> */}
           </div>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-4 xl:space-x-7 max-[1366px]:space-x-3">
             {navLinks.map((link) => (
               link.page ? (
                 <button
                   key={link.name}
                   onClick={() => onNavigate?.(link.page)}
-                  className={`text-sm font-bold uppercase tracking-wider transition-all hover:translate-y-[-1px] ${currentPage === link.page ? 'text-amber-600' : 'text-slate-600 hover:text-blue-900'}`}
+                  className={`text-[10px] lg:text-[10px] xl:text-sm font-bold uppercase tracking-[0.08em] xl:tracking-wider transition-all hover:translate-y-[-1px] ${currentPage === link.page ? 'text-amber-600' : 'text-slate-600 hover:text-blue-900'} max-[1366px]:text-[9px] max-[1366px]:tracking-[0.04em]`}
                 >
                   {link.name}
                 </button>
@@ -77,7 +87,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, onEnrollClick, currentPage 
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleLinkClick(e, link.href)}
-                  className={`text-sm font-bold uppercase tracking-wider transition-all hover:translate-y-[-1px] text-slate-600 hover:text-blue-900`}
+                  className={`text-[10px] lg:text-[10px] xl:text-sm font-bold uppercase tracking-[0.08em] xl:tracking-wider transition-all hover:translate-y-[-1px] text-slate-600 hover:text-blue-900 max-[1366px]:text-[9px] max-[1366px]:tracking-[0.04em]`}
                 >
                   {link.name}
                 </a>
@@ -86,15 +96,15 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, onEnrollClick, currentPage 
 
             <button
               onClick={() => onNavigate?.('donate')}
-              className="group flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-black transition-all transform hover:scale-105 border-2 border-amber-500 text-amber-600 hover:bg-amber-50"
+              className="group flex items-center gap-1.5 px-3 py-1.5 lg:px-3.5 lg:py-1.5 rounded-xl text-[10px] lg:text-[10px] xl:text-sm font-black transition-all transform hover:scale-105 border-2 border-amber-500 text-amber-600 hover:bg-amber-50 max-[1366px]:px-2.5 max-[1366px]:py-1 max-[1366px]:text-[9px]"
             >
-              <Heart className={`w-4 h-4 transition-transform group-hover:scale-110 ${currentPage === 'donate' ? 'fill-amber-600' : ''}`} />
+              <Heart className={`w-3 h-3 lg:w-3 lg:h-3 xl:w-4 xl:h-4 transition-transform group-hover:scale-110 ${currentPage === 'donate' ? 'fill-amber-600' : ''}`} />
               DONATE
             </button>
 
             <button
               onClick={() => onEnrollClick?.()}
-              className="bg-amber-500 hover:bg-amber-600 text-blue-900 px-7 py-3 rounded-xl text-sm font-black transition-all transform hover:scale-105 shadow-lg shadow-amber-500/20"
+              className="bg-amber-500 hover:bg-amber-600 text-blue-900 px-4 py-1.5 lg:px-4.5 lg:py-1.5 rounded-xl text-[10px] lg:text-[10px] xl:text-sm font-black transition-all transform hover:scale-105 shadow-lg shadow-amber-500/20 max-[1366px]:px-3 max-[1366px]:py-1 max-[1366px]:text-[9px]"
             >
               ENROLL NOW
             </button>

@@ -28,7 +28,7 @@ const ScrollToTop: React.FC = () => {
     }, []);
 
     return (
-        <div className="fixed bottom-8 right-28 z-50">
+        <div className="fixed bottom-28 right-8 z-[89]">
             <button
                 type="button"
                 onClick={scrollToTop}

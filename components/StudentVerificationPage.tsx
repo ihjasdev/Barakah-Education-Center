@@ -91,18 +91,6 @@ const StudentVerificationPage: React.FC = () => {
               </p>
             </form>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              {[
-                ['Secure Lookup', 'Only exact issued IDs return a record.'],
-                ['Certificate Ready', 'Supports image and PDF certificate files.'],
-                ['Easy to Update', 'Add new students by editing one JSON file.'],
-              ].map(([title, text]) => (
-                <div key={title} className="rounded-[1.75rem] border border-white/70 bg-white/80 p-6 shadow-lg shadow-slate-200/40 backdrop-blur">
-                  <p className="text-sm font-black uppercase tracking-[0.2em] text-blue-950">{title}</p>
-                  <p className="mt-3 text-sm font-medium leading-relaxed text-slate-600">{text}</p>
-                </div>
-              ))}
-            </div>
           </div>
 
           <div className="rounded-[2.25rem] border border-slate-200 bg-white p-6 shadow-2xl shadow-slate-300/20 sm:p-8">
