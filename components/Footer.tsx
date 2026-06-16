@@ -4,7 +4,7 @@ import { Facebook, Twitter, Linkedin, Instagram, MapPin, Trees, Mail, PhoneCall 
 import Logo from '../assets/Barakah-white logo.png';
 
 interface FooterProps {
-  onNavigate?: (page: 'home' | 'donate' | 'catalog') => void;
+  onNavigate?: (page: 'home' | 'donate' | 'catalog' | 'verification') => void;
 }
 
 const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
@@ -47,6 +47,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               {[
                 { name: 'Home', page: 'home' },
                 { name: 'Course Catalog', page: 'catalog' },
+                { name: 'Certificate Verify', page: 'verification' },
                 { name: 'Our Impact', href: '#impact' },
                 { name: 'About Charity', href: 'https://barakah.ch/en/' },
                 { name: 'Contact Support', href: '#contact' }
@@ -54,7 +55,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <li key={link.name}>
                   {link.page ? (
                     <button
-                      onClick={() => onNavigate?.(link.page as 'home' | 'donate' | 'catalog')}
+                      onClick={() => onNavigate?.(link.page as 'home' | 'donate' | 'catalog' | 'verification')}
                       className="hover:text-white transition-colors flex items-center group uppercase text-xs tracking-widest"
                     >
                       <span className="w-0 group-hover:w-3 h-0.5 bg-amber-500 mr-0 group-hover:mr-2 transition-all"></span>
@@ -81,7 +82,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               ].map((link) => (
                 <li key={link.name}>
                   <button
-                    onClick={() => onNavigate?.(link.page as 'home' | 'donate' | 'catalog')}
+                    onClick={() => onNavigate?.(link.page as 'home' | 'donate' | 'catalog' | 'verification')}
                     className="hover:text-white transition-colors flex items-center group uppercase text-xs tracking-widest"
                   >
                     <span className="w-0 group-hover:w-3 h-0.5 bg-amber-500 mr-0 group-hover:mr-2 transition-all"></span>

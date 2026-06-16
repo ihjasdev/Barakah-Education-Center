@@ -4,9 +4,9 @@ import { Menu, X, Heart } from 'lucide-react';
 import Logo from '../assets/Barakah-education-center.png';
 
 interface NavbarProps {
-  onNavigate?: (page: 'home' | 'donate' | 'catalog') => void;
+  onNavigate?: (page: 'home' | 'donate' | 'catalog' | 'verification') => void;
   onEnrollClick?: () => void;
-  currentPage?: 'home' | 'donate' | 'catalog';
+  currentPage?: 'home' | 'donate' | 'catalog' | 'verification';
 }
 
 const Navbar: React.FC<NavbarProps> = ({ onNavigate, onEnrollClick, currentPage = 'home' }) => {
@@ -39,8 +39,8 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, onEnrollClick, currentPage 
   const navLinks = [
     { name: 'Home', href: '#' },
     { name: 'Courses', href: '#courses' },
+    { name: 'Verify Certificate', page: 'verification' as const },
     { name: 'Our Impact', href: '#impact' },
-    { name: 'Gallery', href: '#gallery' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -64,14 +64,24 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, onEnrollClick, currentPage 
 
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => handleLinkClick(e, link.href)}
-                className={`text-sm font-bold uppercase tracking-wider transition-all hover:translate-y-[-1px] text-slate-600 hover:text-blue-900`}
-              >
-                {link.name}
-              </a>
+              link.page ? (
+                <button
+                  key={link.name}
+                  onClick={() => onNavigate?.(link.page)}
+                  className={`text-sm font-bold uppercase tracking-wider transition-all hover:translate-y-[-1px] ${currentPage === link.page ? 'text-amber-600' : 'text-slate-600 hover:text-blue-900'}`}
+                >
+                  {link.name}
+                </button>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => handleLinkClick(e, link.href)}
+                  className={`text-sm font-bold uppercase tracking-wider transition-all hover:translate-y-[-1px] text-slate-600 hover:text-blue-900`}
+                >
+                  {link.name}
+                </a>
+              )
             ))}
 
             <button
@@ -113,14 +123,27 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, onEnrollClick, currentPage 
             </div>
             <div className="flex-1 px-6 py-10 flex flex-col items-center justify-center space-y-8 bg-white">
               {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={(e) => handleLinkClick(e, link.href)}
-                  className="text-xl font-black text-blue-900 uppercase tracking-tighter"
-                >
-                  {link.name}
-                </a>
+                link.page ? (
+                  <button
+                    key={link.name}
+                    onClick={() => {
+                      onNavigate?.(link.page);
+                      setIsOpen(false);
+                    }}
+                    className="text-xl font-black text-blue-900 uppercase tracking-tighter"
+                  >
+                    {link.name}
+                  </button>
+                ) : (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={(e) => handleLinkClick(e, link.href)}
+                    className="text-xl font-black text-blue-900 uppercase tracking-tighter"
+                  >
+                    {link.name}
+                  </a>
+                )
               ))}
 
               <button

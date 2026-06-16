@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import CourseCard from './components/CourseCard';
@@ -14,18 +14,63 @@ import NewsFeed from './components/NewsFeed';
 import CourseCatalog from './components/CourseCatalog';
 import ScrollToTop from './components/ScrollToTop';
 import SEO from './components/SEO';
+import StudentVerificationPage from './components/StudentVerificationPage';
 import { COURSES, TESTIMONIALS, PARTNERS } from './constants';
 import { Course } from './types';
 import { GraduationCap, Award, Users, TrendingUp, Trees, Heart, Star, Sparkles, Send } from 'lucide-react';
 import ITCenter from './assets/class2.jpeg';
 
+type PageName = 'home' | 'donate' | 'catalog' | 'verification';
+
+const getPageFromPath = (pathname: string): PageName => {
+  switch (pathname.toLowerCase()) {
+    case '/donate':
+      return 'donate';
+    case '/catalog':
+      return 'catalog';
+    case '/verification':
+      return 'verification';
+    default:
+      return 'home';
+  }
+};
+
+const getPathFromPage = (page: PageName) => {
+  switch (page) {
+    case 'donate':
+      return '/donate';
+    case 'catalog':
+      return '/catalog';
+    case 'verification':
+      return '/verification';
+    default:
+      return '/';
+  }
+};
+
 const App: React.FC = () => {
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
-  const [currentPage, setCurrentPage] = useState<'home' | 'donate' | 'catalog'>('home');
+  const [currentPage, setCurrentPage] = useState<PageName>(() => getPageFromPath(window.location.pathname));
   const [isApplicationModalOpen, setIsApplicationModalOpen] = useState(false);
 
-  const navigateTo = (page: 'home' | 'donate' | 'catalog') => {
+  useEffect(() => {
+    const handlePopState = () => {
+      setSelectedCourse(null);
+      setCurrentPage(getPageFromPath(window.location.pathname));
+      window.scrollTo(0, 0);
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  const navigateTo = (page: PageName) => {
+    setSelectedCourse(null);
     setCurrentPage(page);
+    const nextPath = getPathFromPage(page);
+    if (window.location.pathname !== nextPath) {
+      window.history.pushState({}, '', nextPath);
+    }
     window.scrollTo(0, 0);
   };
 
@@ -110,6 +155,14 @@ const App: React.FC = () => {
           title="Support Education | Donate"
           description="Help us provide scholarships and technical training to underprivileged youth in Sri Lanka. Your donation transforms lives."
           canonical="https://barakah-edu.com/donate"
+        />
+      )}
+      {currentPage === 'verification' && (
+        <SEO
+          title="Student Certificate Verification | Barakah Education Center"
+          description="Verify Barakah Charity Education Center certificates by entering the official certificate unique ID."
+          keywords="certificate verification, student certificate, Barakah Education Center, verify certificate"
+          canonical="https://barakah-edu.com/verification"
         />
       )}
       {selectedCourse && (
@@ -276,6 +329,8 @@ const App: React.FC = () => {
           </>
         ) : currentPage === 'catalog' ? (
           <CourseCatalog onBack={() => navigateTo('home')} />
+        ) : currentPage === 'verification' ? (
+          <StudentVerificationPage />
         ) : (
           <DonatePage />
         )}

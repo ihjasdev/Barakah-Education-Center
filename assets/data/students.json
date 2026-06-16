@@ -1,0 +1,38 @@
+[
+  {
+    "certificateId": "BEC-2026-WEB-001",
+    "studentId": "STU-2026-001",
+    "fullName": "Amina Nawas",
+    "courseName": "AI-Assisted Web Development",
+    "batch": "2nd Batch - 2026",
+    "issueDate": "2026-05-28",
+    "completionYear": 2026,
+    "grade": "Distinction",
+    "certificateFile": "BEC-2026-WEB-001.pdf",
+    "verificationStatus": "verified"
+  },
+  {
+    "certificateId": "BEC-2026-ENG-002",
+    "studentId": "STU-2026-014",
+    "fullName": "Mohamed Riyas",
+    "courseName": "Communication English",
+    "batch": "2nd Batch - 2026",
+    "issueDate": "2026-05-30",
+    "completionYear": 2026,
+    "grade": "Merit",
+    "certificateFile": "BEC-2026-ENG-002.jpg",
+    "verificationStatus": "verified"
+  },
+  {
+    "certificateId": "BEC-2026-BIM-003",
+    "studentId": "STU-2026-027",
+    "fullName": "Fathima Zeenath",
+    "courseName": "BIM-Based Architectural Design",
+    "batch": "2nd Batch - 2026",
+    "issueDate": "2026-06-01",
+    "completionYear": 2026,
+    "grade": "Credit",
+    "certificateFile": "BEC-2026-BIM-003.png",
+    "verificationStatus": "verified"
+  }
+]

@@ -31,3 +31,16 @@ export interface InquiryFormData {
   course: string;
   message: string;
 }
+
+export interface StudentCertificateRecord {
+  certificateId: string;
+  studentId: string;
+  fullName: string;
+  courseName: string;
+  batch: string;
+  issueDate: string;
+  completionYear: number;
+  grade: string;
+  certificateFile: string;
+  verificationStatus: 'verified' | 'revoked' | 'pending';
+}
