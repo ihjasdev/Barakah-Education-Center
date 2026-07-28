@@ -54,7 +54,7 @@ const ApplicationModal: React.FC<ApplicationModalProps> = ({ isOpen, onClose }) 
                         </div>
                     </div>
                     <iframe
-                        src="https://docs.google.com/forms/d/e/1FAIpQLScofxYNnXR-yQGXMDL6FPk6zsr4fO2MRbQefWQK-d-EGSRH9A/viewform?usp=header"
+                        src="https://docs.google.com/forms/d/e/1FAIpQLScofxYNnXR-yQGXMDL6FPk6zsr4fO2MRbQefWQK-d-EGSRH9A/viewform?embedded=true"
                         className="w-full h-full border-none"
                         title="Student Application Form"
                     >
