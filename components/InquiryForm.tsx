@@ -47,7 +47,7 @@ const InquiryForm: React.FC<InquiryFormProps> = ({ onEnrollClick }) => {
                 <div className="w-24 h-24 bg-amber-500 rounded-full flex items-center justify-center text-blue-950 text-4xl mx-auto mb-8 shadow-2xl">
                   <ClipboardCheck className="w-10 h-10" />
                 </div>
-                <h3 className="text-3xl font-black text-white mb-6 tracking-tighter uppercase italic">3rd Batch Intake</h3>
+                <h3 className="text-3xl font-black text-white mb-6 tracking-tighter uppercase italic">3 rd Batch Intake</h3>
                 <p className="text-slate-400 font-bold mb-10 leading-relaxed">
                   Join our elite group of students. Our application process is quick and simple.
                 </p>
@@ -61,7 +61,7 @@ const InquiryForm: React.FC<InquiryFormProps> = ({ onEnrollClick }) => {
                 </button>
 
                 <p className="mt-8 text-slate-500 text-xs font-bold uppercase tracking-widest">
-                  Secure your spot • Limited Seats Available
+                  Secure your spot • Limited Seats Available (Only 15 students per batch) • Apply Now
                 </p>
               </div>
             </div>

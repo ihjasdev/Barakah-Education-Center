@@ -1,22 +1,27 @@
 import React from 'react';
-import { Camera, Users, Sparkles, Coffee } from 'lucide-react';
+import { ArrowRight, Camera, Coffee, Sparkles, Users } from 'lucide-react';
 import Class1 from '../assets/class1.jpeg';
 import Class2 from '../assets/class2.jpeg';
 import Class3 from '../assets/class3.jpeg';
 import Class4 from '../assets/class4.jpeg';
+import ConvocationCover from '../assets/2.png';
 
-const Gallery: React.FC = () => {
+interface GalleryProps {
+    onViewConvocation?: () => void;
+}
+
+const Gallery: React.FC<GalleryProps> = ({ onViewConvocation }) => {
     const galleryItems = [
         {
             src: Class1,
             category: 'Collaborative Learning',
-            title: 'Web Development Group Projects',
+            title: 'Advanced Computer Labs Kinniya',
             size: 'col-span-1 md:col-span-2 row-span-2'
         },
         {
             src: Class3,
             category: 'Modern Facilities',
-            title: 'Advanced Computer Labs Kinniya',
+            title: 'Web Development Group Projects',
             size: 'col-span-1'
         },
         {
@@ -30,6 +35,13 @@ const Gallery: React.FC = () => {
             category: 'Mentorship',
             title: 'Expert AI & Tech Guidance',
             size: 'col-span-1 md:col-span-2'
+        },
+        {
+            src: ConvocationCover,
+            category: 'Convocation 2026',
+            title: '1st & 2nd Batch Celebration',
+            size: 'col-span-1 md:col-span-2',
+            featured: true
         }
     ];
 
@@ -67,14 +79,42 @@ const Gallery: React.FC = () => {
                                 alt={item.title}
                                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <div className="absolute bottom-0 left-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <div className={`absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-950/20 to-transparent transition-opacity duration-300 ${item.featured ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
+                                <div className={`absolute bottom-0 left-0 p-8 transition-transform duration-300 ${item.featured ? 'translate-y-0' : 'transform translate-y-4 group-hover:translate-y-0'}`}>
                                     <span className="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2 block">{item.category}</span>
                                     <h4 className="text-white text-2xl font-black tracking-tight">{item.title}</h4>
+                                    {item.featured && onViewConvocation && (
+                                        <button
+                                            onClick={onViewConvocation}
+                                            className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-black uppercase tracking-[0.18em] text-blue-950 transition-transform hover:translate-x-1"
+                                        >
+                                            View Full Album
+                                            <ArrowRight className="h-4 w-4" />
+                                        </button>
+                                    )}
                                 </div>
                             </div>
                         </div>
                     ))}
+                </div>
+
+                <div className="mt-8 rounded-[2rem] border border-amber-100 bg-white/80 p-6 shadow-sm backdrop-blur-sm md:flex md:items-center md:justify-between">
+                    <div className="max-w-2xl">
+                        <p className="text-xs font-black uppercase tracking-[0.3em] text-amber-600">Featured Event</p>
+                        <h4 className="mt-3 text-2xl font-black tracking-tight text-blue-950">Last Convocation 2026 for 1st & 2nd Batch Students</h4>
+                        <p className="mt-2 text-sm font-medium leading-relaxed text-slate-500">
+                            We kept the main gallery compact and moved the full convocation photo collection to a separate page for a smoother browsing experience.
+                        </p>
+                    </div>
+                    {onViewConvocation && (
+                        <button
+                            onClick={onViewConvocation}
+                            className="mt-6 inline-flex items-center gap-2 rounded-full bg-blue-950 px-6 py-3 text-sm font-black uppercase tracking-[0.18em] text-white transition-colors hover:bg-blue-900 md:mt-0"
+                        >
+                            Open Convocation Page
+                            <ArrowRight className="h-4 w-4" />
+                        </button>
+                    )}
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20">

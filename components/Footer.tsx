@@ -4,7 +4,7 @@ import { Facebook, Twitter, Linkedin, Instagram, MapPin, Trees, Mail, PhoneCall 
 import Logo from '../assets/Barakah-white logo.png';
 
 interface FooterProps {
-  onNavigate?: (page: 'home' | 'donate' | 'catalog' | 'verification') => void;
+  onNavigate?: (page: 'home' | 'donate' | 'catalog' | 'verification' | 'convocation') => void;
 }
 
 const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
@@ -47,6 +47,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               {[
                 { name: 'Home', page: 'home' },
                 { name: 'Course Catalog', page: 'catalog' },
+                { name: 'Convocation 2026', page: 'convocation' },
                 { name: 'Certificate Verify', page: 'verification' },
                 { name: 'Our Impact', href: '#impact' },
                 { name: 'About Charity', href: 'https://barakah.ch/en/' },
@@ -56,6 +57,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   {link.page ? (
                     <button
                       onClick={() => onNavigate?.(link.page as 'home' | 'donate' | 'catalog' | 'verification')}
+                      
                       className="hover:text-white transition-colors flex items-center group uppercase text-xs tracking-widest"
                     >
                       <span className="w-0 group-hover:w-3 h-0.5 bg-amber-500 mr-0 group-hover:mr-2 transition-all"></span>
@@ -116,10 +118,6 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <p className="text-slate-500 font-bold text-sm">
             © {new Date().getFullYear()} Barakah Charity Education Center Sri Lanka. Developed by <a href="https://www.isitsolution.com/" className="hover:text-amber-500" target="_blank" rel="noopener noreferrer">IS-IT Solution</a>. All rights reserved.
           </p>
-          <div className="flex gap-8 text-xs font-black uppercase tracking-widest text-slate-500">
-            <a href="#" className="hover:text-amber-500">Privacy Policy</a>
-            <a href="#" className="hover:text-amber-500">Terms of Service</a>
-          </div>
         </div>
       </div>
     </footer>

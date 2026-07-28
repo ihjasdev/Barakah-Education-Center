@@ -15,12 +15,13 @@ import CourseCatalog from './components/CourseCatalog';
 import ScrollToTop from './components/ScrollToTop';
 import SEO from './components/SEO';
 import StudentVerificationPage from './components/StudentVerificationPage';
+import ConvocationPage from './components/ConvocationPage';
 import { COURSES, TESTIMONIALS, PARTNERS } from './constants';
 import { Course } from './types';
 import { GraduationCap, Award, Users, TrendingUp, Trees, Heart, Star, Sparkles, Send } from 'lucide-react';
 import ITCenter from './assets/class2.jpeg';
 
-type PageName = 'home' | 'donate' | 'catalog' | 'verification';
+type PageName = 'home' | 'donate' | 'catalog' | 'verification' | 'convocation';
 
 const getPageFromPath = (pathname: string): PageName => {
   switch (pathname.toLowerCase()) {
@@ -30,6 +31,8 @@ const getPageFromPath = (pathname: string): PageName => {
       return 'catalog';
     case '/verification':
       return 'verification';
+    case '/convocation':
+      return 'convocation';
     default:
       return 'home';
   }
@@ -43,6 +46,8 @@ const getPathFromPage = (page: PageName) => {
       return '/catalog';
     case 'verification':
       return '/verification';
+    case 'convocation':
+      return '/convocation';
     default:
       return '/';
   }
@@ -165,6 +170,14 @@ const App: React.FC = () => {
           canonical="https://barakah-edu.com/verification"
         />
       )}
+      {currentPage === 'convocation' && (
+        <SEO
+          title="Convocation 2026 Photo Gallery | Barakah Education Center"
+          description="Browse the full photo gallery from Barakah Education Center's 2026 convocation celebrating our 1st and 2nd batch students together."
+          keywords="Barakah convocation 2026, student gallery, 1st batch, 2nd batch, Barakah Education Center photos"
+          canonical="https://barakah-edu.com/convocation"
+        />
+      )}
       {selectedCourse && (
         <SEO
           title={`${selectedCourse.title} Professional Course | Barakah Education Center`}
@@ -279,7 +292,7 @@ const App: React.FC = () => {
             </section>
 
             {/* Gallery Section */}
-            <Gallery />
+            <Gallery onViewConvocation={() => navigateTo('convocation')} />
 
             {/* Testimonials */}
             <section className="py-32 bg-white">
@@ -331,6 +344,8 @@ const App: React.FC = () => {
           <CourseCatalog onBack={() => navigateTo('home')} />
         ) : currentPage === 'verification' ? (
           <StudentVerificationPage />
+        ) : currentPage === 'convocation' ? (
+          <ConvocationPage onBack={() => navigateTo('home')} />
         ) : (
           <DonatePage />
         )}

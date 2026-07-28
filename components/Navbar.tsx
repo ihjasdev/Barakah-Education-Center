@@ -1,12 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Heart } from 'lucide-react';
+import { Menu, X, Heart, Sparkles } from 'lucide-react';
 import Logo from '../assets/Barakah-education-center.png';
 
 interface NavbarProps {
-  onNavigate?: (page: 'home' | 'donate' | 'catalog' | 'verification') => void;
+  onNavigate?: (page: 'home' | 'donate' | 'catalog' | 'verification' | 'convocation') => void;
   onEnrollClick?: () => void;
-  currentPage?: 'home' | 'donate' | 'catalog' | 'verification';
+  currentPage?: 'home' | 'donate' | 'catalog' | 'verification' | 'convocation';
 }
 
 const Navbar: React.FC<NavbarProps> = ({ onNavigate, onEnrollClick, currentPage = 'home' }) => {
@@ -54,8 +54,56 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, onEnrollClick, currentPage 
     { name: 'Contact', href: '#contact' },
   ];
 
+  const announcementItems = [
+    'New update: Convocation 2026 album is now live',
+    'Celebrating our 1st & 2nd batch students together',
+    'Admissions open now for our 3rd batch intake 2026 (Closing date: 10-August-2026)',
+    'Apply today and reserve your seat for the upcoming batch',
+    'Tap to explore all event photos',
+  ];
+
   return (
-    <nav className={`fixed z-50 transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} ${scrolled ? 'top-2 inset-x-0 mx-auto w-[95%] max-w-7xl rounded-2xl bg-white/90 backdrop-blur-md shadow-2xl py-1 border border-white/20 xl:top-3 xl:py-2' : 'top-0 w-full bg-white py-1 xl:py-2 shadow-none'}`}>
+    <>
+      <style>
+        {`
+          @keyframes barakah-marquee {
+            0% {
+              transform: translate3d(0, 0, 0);
+            }
+            100% {
+              transform: translate3d(-50%, 0, 0);
+            }
+          }
+        `}
+      </style>
+
+      <div className="fixed top-0 z-[60] w-full overflow-hidden bg-blue-950 text-white shadow-lg">
+        <div className="mx-auto flex min-h-[48px] max-w-7xl items-center gap-4 px-4 sm:px-5 lg:px-5 xl:px-7">
+          <div className="hidden shrink-0 items-center gap-2 rounded-full bg-white/10 px-3 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-amber-300 sm:inline-flex">
+            <Sparkles className="h-3.5 w-3.5" />
+            Recent Update
+          </div>
+
+          <button
+            onClick={() => onNavigate?.('convocation')}
+            className="group flex min-w-0 flex-1 items-center overflow-hidden text-left"
+          >
+            <div
+              className="flex min-w-max items-center gap-10 whitespace-nowrap pr-10 text-xs font-bold uppercase tracking-[0.18em] text-slate-100"
+              style={{ animation: 'barakah-marquee 24s linear infinite' }}
+            >
+              {[...announcementItems, ...announcementItems].map((item, index) => (
+                <span key={`${item}-${index}`} className="inline-flex items-center gap-3">
+                  <span className="h-2 w-2 rounded-full bg-amber-400"></span>
+                  {item}
+                </span>
+              ))}
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <nav className={`fixed z-50 transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} ${scrolled ? 'top-[54px] inset-x-0 mx-auto w-[95%] max-w-7xl rounded-2xl bg-white/90 backdrop-blur-md shadow-2xl py-1 border border-white/20 xl:top-[58px] xl:py-2' : 'top-12 w-full bg-white py-1 xl:py-2 shadow-none'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-5 lg:px-5 xl:px-7">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-3 group cursor-pointer">
@@ -180,7 +228,8 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, onEnrollClick, currentPage 
           </div>
         </div>
       )}
-    </nav>
+      </nav>
+    </>
   );
 };
 
