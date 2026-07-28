@@ -24,7 +24,7 @@ const ApplicationModal: React.FC<ApplicationModalProps> = ({ isOpen, onClose }) 
                 <div className="flex items-center justify-between px-8 py-6 border-b border-slate-100 bg-slate-50">
                     <div>
                         <h3 className="text-2xl font-black text-blue-950 tracking-tighter">Student Application</h3>
-                        <p className="text-xs font-bold text-amber-600 uppercase tracking-widest">2nd Batch Intake - 2026</p>
+                        <p className="text-xs font-bold text-amber-600 uppercase tracking-widest">3rd Batch Intake - 2026</p>
                     </div>
                     <div className="flex items-center gap-3">
                         <a
@@ -54,7 +54,7 @@ const ApplicationModal: React.FC<ApplicationModalProps> = ({ isOpen, onClose }) 
                         </div>
                     </div>
                     <iframe
-                        src="https://docs.google.com/forms/d/e/1FAIpQLSfHTDq2fJwiQjH4RbpMzw_NHfNtqxG3-5SKyXuuJg17AszWFg/viewform?embedded=true"
+                        src="https://docs.google.com/forms/d/e/1FAIpQLScofxYNnXR-yQGXMDL6FPk6zsr4fO2MRbQefWQK-d-EGSRH9A/viewform?usp=header"
                         className="w-full h-full border-none"
                         title="Student Application Form"
                     >
