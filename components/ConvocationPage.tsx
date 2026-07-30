@@ -5,7 +5,6 @@ import Photo3 from '../assets/3.png';
 import Photo4 from '../assets/4.png';
 import Photo5 from '../assets/5.jpg';
 import Photo6 from '../assets/6.jpg';
-import Photo7 from '../assets/7.jpg';
 import Photo8 from '../assets/8.jpg';
 import Photo9 from '../assets/9.jpg';
 import Photo10 from '../assets/10.jpg';
@@ -33,7 +32,6 @@ const photos = [
   Photo4,
   Photo5,
   Photo6,
-  Photo7,
   Photo8,
   Photo9,
   Photo10,
